@@ -36,9 +36,11 @@ public class BulkDemo {
 		
 		MappingSession.start();
 		
-		
+		//Seperated row bulk insert 
 		totalRecord = Model.bulkInsert(Product.class, "./src/demo4/products.txt", "**",BulkInsert.NEW_LINE);
 		
+		//regular expression based bulk insert
+		totalRecord = Model.bulkInsert(AnotherProduct.class, "./src/demo4/products2.txt", "<item name=\"(\\S+)\" pieces=\"(\\S+)\" price=\"(\\S+)\" />");
 		
 		if (totalRecord == -1) 
 			System.out.println("Ops. Something went wrong!");

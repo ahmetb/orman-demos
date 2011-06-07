@@ -54,4 +54,9 @@ public class Product extends Model<Product>{
 		submitDate = addDate;
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("Name=%s, Desc=%s, Price=%d, Submit on=%s", name, description, price, submitDate.toString());
+	}
+	
 }

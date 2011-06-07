@@ -1,0 +1,5 @@
+<products>
+<item name="XYZ" pieces="120" price="12.99" />
+<item name="YUTIZU" pieces="64" price="22.45" />
+<item name="ATRYSK" pieces="1204" price="11.42" />
+</products>
