@@ -26,7 +26,7 @@ public class UsualProgram {
 		
 
 		MappingSession.getConfiguration().setCreationPolicy(
-				SchemeCreationPolicy.USE_EXISTING);
+				SchemeCreationPolicy.CREATE_IF_NOT_EXISTS);
 		MappingSession.registerDatabase(db);
 		MappingSession.start();
 
