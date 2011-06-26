@@ -2,12 +2,12 @@ package demo6manytomany;
 
 import java.util.List;
 
-import org.orman.datasource.Database;
+import org.orman.dbms.Database;
+import org.orman.dbms.sqlite.SQLite;
 import org.orman.mapper.MappingSession;
 import org.orman.mapper.Model;
 import org.orman.mapper.PhysicalNamingPolicy;
-import org.orman.mapper.SchemeCreationPolicy;
-import org.orman.sqlite.SQLite;
+import org.orman.mapper.SchemaCreationPolicy;
 import org.orman.util.logging.Log;
 import org.orman.util.logging.LoggingLevel;
 import org.orman.util.logging.StandardLogger;
@@ -29,7 +29,7 @@ public class BlogEngine {
 		
 		MappingSession.registerDatabase(db);
 		MappingSession.getConfiguration().setCreationPolicy(
-				SchemeCreationPolicy.CREATE);
+				SchemaCreationPolicy.CREATE);
 		
 		PhysicalNamingPolicy columnNamePolicy = new  PhysicalNamingPolicy().camelCase(true).underscore(false);
 		MappingSession.getConfiguration().setColumnNamePolicy(columnNamePolicy);

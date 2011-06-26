@@ -8,7 +8,7 @@ import org.orman.mapper.annotation.ManyToMany;
 import org.orman.mapper.annotation.PrimaryKey;
 import org.orman.sql.IndexType;
 
-@Entity
+@Entity(table="WHERE")
 public class BlogPost extends Model<BlogPost>{
 	@PrimaryKey(autoIncrement=true)
 	public long pid;

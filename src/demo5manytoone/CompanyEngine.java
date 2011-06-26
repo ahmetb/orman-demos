@@ -2,12 +2,12 @@ package demo5manytoone;
 
 import java.util.List;
 
-import org.orman.datasource.Database;
+import org.orman.dbms.Database;
+import org.orman.dbms.sqlite.SQLite;
 import org.orman.mapper.EntityList;
 import org.orman.mapper.MappingSession;
 import org.orman.mapper.Model;
-import org.orman.mapper.SchemeCreationPolicy;
-import org.orman.sqlite.SQLite;
+import org.orman.mapper.SchemaCreationPolicy;
 import org.orman.util.logging.Log;
 import org.orman.util.logging.LoggingLevel;
 import org.orman.util.logging.StandardLogger;
@@ -21,7 +21,7 @@ public class CompanyEngine {
 		Log.setLevel(LoggingLevel.TRACE);
 		MappingSession.registerDatabase(db);
 		MappingSession.getConfiguration().setCreationPolicy(
-				SchemeCreationPolicy.CREATE);
+				SchemaCreationPolicy.CREATE);
 		MappingSession.start();
 		
 		Department d1 = new Department();

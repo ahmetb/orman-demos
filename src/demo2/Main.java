@@ -3,13 +3,13 @@ package demo2;
 import java.util.Date;
 import java.util.Calendar;
 
-import org.orman.datasource.Database;
+import org.orman.dbms.Database;
+import org.orman.dbms.mysql.MySQL;
+import org.orman.dbms.mysql.MySQLSettingsImpl;
+import org.orman.dbms.sqlite.SQLite;
 import org.orman.mapper.IdGenerationPolicy;
 import org.orman.mapper.MappingSession;
-import org.orman.mapper.SchemeCreationPolicy;
-import org.orman.mysql.MySQL;
-import org.orman.mysql.MySQLSettingsImpl;
-import org.orman.sqlite.SQLite;
+import org.orman.mapper.SchemaCreationPolicy;
 import org.orman.util.logging.ILogger;
 import org.orman.util.logging.Log;
 import org.orman.util.logging.Log4jAdapter;
@@ -28,7 +28,7 @@ public class Main {
 		MappingSession.registerDatabase(db);
 		
 		MappingSession.getConfiguration().setCreationPolicy(
-				SchemeCreationPolicy.CREATE);
+				SchemaCreationPolicy.CREATE);
 		MappingSession.getConfiguration().setIdGenerationPolicy(
 				IdGenerationPolicy.MANUAL);
 		

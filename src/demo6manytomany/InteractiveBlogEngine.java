@@ -3,11 +3,11 @@ package demo6manytomany;
 import java.util.List;
 import java.util.Scanner;
 
-import org.orman.datasource.Database;
+import org.orman.dbms.Database;
+import org.orman.dbms.sqlite.SQLite;
 import org.orman.mapper.MappingSession;
 import org.orman.mapper.Model;
-import org.orman.mapper.SchemeCreationPolicy;
-import org.orman.sqlite.SQLite;
+import org.orman.mapper.SchemaCreationPolicy;
 import org.orman.util.logging.Log;
 import org.orman.util.logging.LoggingLevel;
 import org.orman.util.logging.StandardLogger;
@@ -27,7 +27,7 @@ public class InteractiveBlogEngine {
 		
 		MappingSession.registerDatabase(db);
 		MappingSession.getConfiguration().setCreationPolicy(
-				SchemeCreationPolicy.CREATE_IF_NOT_EXISTS);
+				SchemaCreationPolicy.CREATE_IF_NOT_EXISTS);
 		MappingSession.start();
 		
 		Scanner scan = new Scanner(System.in);

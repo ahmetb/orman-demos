@@ -1,9 +1,9 @@
 package demo7depencencies;
 
 
-import org.orman.datasource.Database;
+import org.orman.dbms.Database;
+import org.orman.dbms.sqlite.SQLite;
 import org.orman.mapper.MappingSession;
-import org.orman.sqlite.SQLite;
 import org.orman.util.logging.ILogger;
 import org.orman.util.logging.Log;
 import org.orman.util.logging.LoggingLevel;
